@@ -1,0 +1,23 @@
+{
+  "name": "online-chess",
+  "description": "A web based chess game",
+  "main": "home.html",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/_lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.8",
+    "angular-bootstrap": "~0.14.3",
+    "bootstrap-css-only": "~3.3.5",
+    "angular-ui-router": "~0.2.15",
+    "requirejs": "~2.1.22",
+    "angular-animate": "~1.4.8"
+  }
+}

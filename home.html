@@ -1,0 +1,44 @@
+<html ng-app="chess">
+
+<head>
+    <title>Online multiplayer chess</title>
+    <link rel="stylesheet" href="/static/_lib/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+
+<body>
+
+    <!-- List or chessboard shown here according to the state in ui.router -->
+    <div ui-view>
+
+    </div>
+
+    <script src="/static/_lib/jquery.js "></script>
+    <script src="/static/_lib/angular.js "></script>
+    <script src="/static/_lib/angular-ui-router.js"></script>
+    <script src="/static/_lib/ui-bootstrap-tpls.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="static/js/pieces/piece.js"></script>
+    <script src="static/js/pieces/bishop.js"></script>
+    <script src="static/js/pieces/king.js"></script>
+    <script src="static/js/pieces/knight.js"></script>
+    <script src="static/js/pieces/pawn.js"></script>
+    <script src="static/js/pieces/queen.js"></script>
+    <script src="static/js/pieces/rook.js"></script>
+
+    <script src="static/js/utils/threatMapService.js"></script>
+    <script src="static/js/utils/translatorService.js"></script>
+
+    <script src="static/js/game.js"></script>
+
+    <script src="static/js/config/config.js"></script>
+    <script src="static/js/controllers/ListController.js"></script>
+    <script src="static/js/controllers/GameController.js"></script>
+    <script src="static/js/controllers/ChatController.js"></script>
+    <script src="static/js/controllers/PromotionController.js"></script>
+    <script src="static/js/controllers/ResultContoller.js"></script>
+
+</body>
+
+</html>

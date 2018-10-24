@@ -1,0 +1,120 @@
+body {
+    background: black;
+    margin-top: 40px;
+}
+.list-box {
+    margin: auto;
+    margin-top: 10%;
+    background: white;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.page-header {
+    border-bottom: 1px solid #cccccc;
+}
+.panel {
+    text-align: center;
+    margin: auto;
+}
+.panel-body {
+    width: 100%;
+}
+.panel>div>div {
+    display: inline-block;
+    clear: none;
+    margin: auto;
+    width: auto;
+}
+.player-details, .player-details > * {
+    float: left;
+}
+.opponent-details, .opponent-details > * {
+    float: right;
+}
+.player-details > h4, .opponent-details > h4 {
+    margin: 5px;
+}
+.panel img {
+    height: 25px;
+    width: 25px;
+}
+#usr {
+    width: 11em;
+    float: right;
+}
+.game-container {
+    width: 800px;
+    margin: auto;
+}
+.panel-message {
+    margin-top: 20px;
+    border: 1px solid black;
+}
+.chessboard {
+    width: 80vh;
+    height: 80vh;
+    padding: 0px;
+    border: 1px solid black;
+}
+.chessboard * {
+    margin: 0px;
+    padding: 0px;
+}
+.chessboard .square {
+    float: left;
+    height: 12.5%;
+    width: 12.5%;
+}
+.even {
+    background-color: #eeeed2;
+}
+.odd {
+    background-color: #769656;
+}
+.highlighted-move {
+    background-color: rgb(255, 255, 51);
+}
+.highlighted-capture {
+    background-color: red;
+}
+div > img {
+    width: 100%;
+    height: 100%;
+}
+.modal-body img {
+    width: 100px;
+    height: 100px;
+}
+.centered {
+    align-content: center;
+    text-align: center;
+}
+.chat-box {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+}
+.chat-box ul {
+    max-height: 300px;
+    max-width: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.chat-box ul > li {
+    margin: 10px;
+    margin-left: 25px;
+    background-color: #eeeed2;
+    color: black;
+}
+.chat-box ul > .theirs {
+    margin-left: 10px;
+    margin-right: 25px;
+}
+.chat-box ul > .dark {
+    background-color: #769656;
+    color: white;
+}
+.chat-box form {
+    margin: 0px;
+}

@@ -1,0 +1,51 @@
+<!-- AngularJS based template for displaying the chessboard and the current state of the game -->
+
+<div class="game-container" ng-controller="GameController">
+	<div class="container chessboard">
+		<div class="row" ng-repeat="row in board | orderBy:'$index':data.side===1">
+			<div class="square" ng-repeat="square in row | orderBy:'$index':data.side===1" ng-class="{'even':(square.rank+square.file)%2===0,'odd':(square.rank+square.file)%2!==0,'highlighted-move':square.highlightedMove,'highlighted-capture':square.highlightedCapture}" ng-click="selectSquare(square.rank, square.file)">
+				<img ng-if="square.piece" ng-src="/static/data/icons/{{((square.piece.side===1)?'w':'b')+square.piece.type}}.png" />
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default panel-message">
+		<div class="panel-body">
+			<div class="player-details">
+				<img ng-src="/static/data/icons/{{data.side===1?'w':'b'}}k.png" />
+				<h4>{{data.player}}</h4>
+			</div>
+			<div class="opponent-details">
+				<img ng-src="/static/data/icons/{{data.side===1?'b':'w'}}k.png" />
+				<h4>{{data.opponent}}</h4>
+			</div>
+
+			<big ng-if="data.player !== data.opponent">{{data.turn ? data.player : data.opponent}} to move</big>
+			<big ng-if="data.player === data.opponent">{{data.turn ? 'Your' : 'Opponent\'s'}} move</big>
+		</div>
+	</div>
+
+	<div class="panel panel-default panel-message chat-box" ng-if="!gameData.againstStockfish" ng-controller="ChatController">
+		<button class="btn btn-default" ng-click="showChat = true" ng-show="!showChat"><big><strong>+</strong></big></button>
+		<div class="panel-body" data-ng-show="showChat">
+			<ul class="list-group chat-list" ng-if="messages.length">
+				<li class="list-group-item" ng-repeat="message in messages"
+					ng-class="{
+						'dark': message.side !== 1,
+						'theirs': message.side !== data.side
+					}">{{message.text}}</li>
+			</ul> 
+			<div class="form-group"> 
+				<form ng-submit="send()">
+					<div class="input-group">
+						<input type="text" class="form-control" name="message" ng-model="message">
+						<div class="input-group-btn">
+							<button class="btn btn-primary" type="submit">Send</button>
+							<button class="btn btn-default" ng-click="showChat = false">-</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
