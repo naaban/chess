@@ -7,7 +7,7 @@
     },
     "main": "server.js",
     "engines": {
-        "node": "4.2.3"
+        "node": "latest"
     },
     "dependencies": {
         "express": "^4.13.3",
